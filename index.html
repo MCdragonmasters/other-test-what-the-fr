@@ -11,7 +11,7 @@
     $(document).ready(function() {
         $.get("https://api.github.com/repos/MCdragonmasters/other-test-what-the-fr/contents/", function(data) {
             for(let dir of data) {
-                if(dir.name == "index.html") continue;
+                if(dir.name == "index.html" || "CNAME") continue;
                 $("#list").prepend(`<p><a href="${dir.name}">${dir.name}</a></p>`);
             }
         });
